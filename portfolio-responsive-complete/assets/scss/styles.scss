@@ -498,6 +498,21 @@ img{
             }
         }
     }
+    .button-blue {
+        display: inline-block;
+        background-color: var(--first-color); /* Utilisation de la couleur bleue */
+        color: #fff;
+        padding: .75rem 2.5rem;
+        font-weight: var(--font-semi);
+        border-radius: .5rem; 
+        transition: .3s;
+        text-decoration: none; /* Pour supprimer la soulignure */
+        width: 30 px;
+    }
+    
+    .button-blue:hover {
+        box-shadow: 0px 10px 36px rgba(0,0,0,.15);
+    }
     .skills__container{
         grid-template-columns: repeat(2,1fr);
         column-gap: 2rem;
@@ -521,5 +536,59 @@ img{
         &__img{
             width: 450px;
         }
+    }
+}
+/* ===== EDUCATION SECTION ===== */
+.education__container {
+    grid-template-columns: .7fr;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+.education__subtitle {
+    margin-bottom: var(--mb-6);
+
+    &::after{
+        width: 80px;
+        top: 3rem;
+    }
+}
+
+.education__data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--mb-4);
+}
+
+.education__names {
+    display: flex;
+    align-items: center; 
+}
+
+.education__name {
+    font-weight: var(--font-semi);
+    color: var(--second-color);
+    margin-left: var(--mb-2);
+}
+
+.education__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi);
+    color: var(--second-color);
+    margin-bottom: var(--mb-2);
+}
+
+.education__description {
+    font-size: var(--normal-font-size);
+    color: var(--second-color);
+
+}
+
+/* Pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .education__container {
+        display: flex;
+        flex-direction: column;
     }
 }
