@@ -55,3 +55,29 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+// Sélectionne le bouton et vérifie la préférence de mode
+const modeToggle = document.getElementById('mode-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+// Si un thème est stocké, l'applique
+if (currentTheme) {
+    document.body.classList.add(currentTheme);
+    if (currentTheme === 'dark-theme') {
+        modeToggle.textContent = '☀️';
+    }
+}
+
+// Fonction pour basculer entre les modes
+modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    
+    // Vérifie si le mode sombre est actif
+    const theme = document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+    
+    // Stocke la préférence de l'utilisateur
+    localStorage.setItem('theme', theme);
+    
+    // Change l'icône du bouton
+    modeToggle.textContent = theme === 'dark-theme' ? '☀️' : '🌙';
+});

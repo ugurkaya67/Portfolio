@@ -4,6 +4,7 @@
 :root {
   --header-height: 3rem;
   --font-semi: 600;
+  --nav-text-color : hsl(var(--hue-color), 56%, 12%); /* Bleu foncé en mode clair */
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
@@ -556,7 +557,7 @@ img {
 
 .education__subtitle {
   margin-bottom: var(--mb-6);
-
+  color: var(--text-color); /* Utilise la couleur de texte dynamique */
   &::after{
       width: 80px;
       top: 3rem;
@@ -564,6 +565,7 @@ img {
 }
 
 .education__data {
+  color: var(--text-color); /* Utilise la couleur dynamique pour s'adapter aux modes clair et sombre */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -571,7 +573,7 @@ img {
 }
 
 .education__names {
-  
+  color: var(--text-color); /* Utilise la couleur dynamique pour s'adapter aux modes clair et sombre */
   display: flex;
   align-items: center; 
 }
@@ -580,7 +582,7 @@ img {
 .education__name {
   width: 250px;
   font-weight: var(--font-semi);
-  color: var(--second-color);
+  color: var(--text-color); /* Utilise la couleur dynamique pour s'adapter aux modes clair et sombre */
   margin-left: var(--mb-2);
 }
 
@@ -588,13 +590,63 @@ img {
   width: 300px;
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
-  color: var(--second-color);
+  color: var(--text-color); /* Utilise la couleur dynamique pour s'adapter aux modes clair et sombre */
   margin-bottom: var(--mb-2);
 }
 
 .education__description {
   width: 400px;
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  color: var(--text-color); /* Utilise la couleur dynamique pour s'adapter aux modes clair et sombre */
 
+}
+/* Style pour Dark Mode */
+/* Variables pour le thème clair (par défaut) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-color: #ffffff;
+  --primary-color: hsl(var(--hue-color), 89%, 60%);
+}
+
+/* Thème sombre */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --header-color: #1f1f1f;
+  --primary-color: hsl(var(--hue-color), 89%, 60%);
+  --nav-text-color: #ffffff; /* Blanc pour le mode sombre */
+}
+
+/* Application des couleurs */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.l-header {
+  background-color: var(--header-color);
+}
+
+/* Autres éléments */
+.button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* Bouton de bascule */
+.mode-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+/* Appliquer la couleur dynamique aux liens du menu */
+.nav__link {
+  color: var(--nav-text-color); /* Utilise la couleur dynamique pour les liens */
+}
+
+.nav__logo {
+  color: var(--nav-text-color); /* Utilise également cette couleur pour le logo */
 }
