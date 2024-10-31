@@ -346,6 +346,64 @@ img {
   cursor: pointer;
   margin-left: auto;
 }
+/* Style pour centrer le conteneur de formulaire */
+.contact__block {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  background-color: var(--first-color); /* Utilise votre couleur principale */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+}
+
+/* Style pour les champs du formulaire */
+.contact__block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.contact__block label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+.contact__block input[type="text"],
+.contact__block input[type="email"],
+.contact__block textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.contact__block textarea {
+  resize: none;
+}
+
+.contact__block input[type="submit"] {
+  background-color: #fff;
+  color: var(--first-color);
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact__block input[type="submit"]:hover {
+  background-color: #f0f0f0;
+}
+
 
 /* ===== FOOTER =====*/
 .footer {

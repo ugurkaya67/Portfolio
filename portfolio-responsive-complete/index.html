@@ -8,7 +8,26 @@
 
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+        <script>
+            // Initialiser EmailJS avec la clé publique
+            (function() {
+                emailjs.init("smcc-et7DkC4JLCCI"); // clé publique
+            })();
+    
+            // Fonction pour envoyer l'email via EmailJS
+            function sendEmail(event) {
+                event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+    
+                emailjs.sendForm('service_4aslqxv', 'template_nxnavk3', '#contact-form')
+                .then(function(response) {
+                    alert("Message envoyé avec succès !");
+                    document.getElementById("contact-form").reset(); // Réinitialiser le formulaire après envoi
+                }, function(error) {
+                    alert("Erreur lors de l'envoi du message : ", error);
+                });
+            }
+        </script>
         <title>Portfolio website complete</title>
     </head>
     <body>
@@ -278,7 +297,7 @@
                 </div>
             </section>
             <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
+<!--             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
@@ -289,7 +308,25 @@
                         <input type="button" value="Enviar" class="contact__button button">
                     </form>
                 </div>
-            </section>
+            </section> -->
+            <div class="contact__block">
+                <h3>Formulaire de contact</h3>
+                <form id="contact-form" onsubmit="sendEmail(event)">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="user_name" placeholder="Votre nom" required>
+            
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="user_email" placeholder="Votre email" required>
+            
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet du message" required>
+            
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+            
+                    <input type="submit" value="Envoyer">
+                </form>
+            </div>            
         </main>
 
         <!--===== FOOTER =====-->
