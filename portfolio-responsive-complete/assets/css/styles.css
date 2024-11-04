@@ -479,6 +479,10 @@ img {
   .contact__container {
     justify-items: center;
   }
+  .education__data {
+    flex-direction: row; /* Passe en ligne sur écrans plus grands */
+    justify-content: space-between;
+  }
 }
 @media screen and (min-width: 768px) {
   body {
@@ -534,6 +538,10 @@ img {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
   }
+  .education__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 @media screen and (min-width: 992px) {
   .bd-grid {
@@ -553,23 +561,27 @@ img {
   grid-template-columns: .7fr;
   justify-content: center;
   column-gap: 1rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .education__subtitle {
   margin-bottom: var(--mb-6);
   color: var(--text-color); /* Utilise la couleur de texte dynamique */
-  &::after{
-      width: 80px;
-      top: 3rem;
-  }
+}
+
+.education__subtitle::after {
+  width: 80px;
+  top: 3rem;
 }
 
 .education__data {
   color: var(--text-color); /* Utilise la couleur dynamique pour s'adapter aux modes clair et sombre */
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /*align-items: center;*/
   margin-bottom: var(--mb-4);
+  flex-direction: column;
 }
 
 .education__names {
@@ -649,4 +661,16 @@ body {
 
 .nav__logo {
   color: var(--nav-text-color); /* Utilise également cette couleur pour le logo */
+}
+
+.education__title,
+.education__name,
+.education__description {
+  width: 100%; /* Occupe toute la largeur de son conteneur */
+}
+
+@media screen and (max-width: 576px) {
+  .education__data {
+    margin-bottom: 1rem; /* Réduit l’espacement sur petits écrans */
+  }
 }
